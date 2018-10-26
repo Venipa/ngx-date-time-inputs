@@ -3,7 +3,7 @@
 Simple date and time inputs. No calendars or fancy controls or polyfills. They just guess the
 date or time the user means. Forgiving and (more or less) locale-aware.
 
-(Demo Site)[https://nowzoo.github.io/ngx-date-time-inputs/]
+[Demo Site](https://nowzoo.github.io/ngx-date-time-inputs/)
 
 ## Installation
 

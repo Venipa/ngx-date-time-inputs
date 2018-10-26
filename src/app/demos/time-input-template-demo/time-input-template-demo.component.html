@@ -1,0 +1,36 @@
+<div class="row mb-4">
+  <div class="col-md-4 mb-2">
+    <div class="form-group">
+      <label [attr.for]="formId + 'time'">Enter a time</label>
+      <ngx-time-input
+        [inputId]="formId + 'time'"
+        inputClass="form-control"
+        [(ngModel)]="time"></ngx-time-input>
+    </div>
+    <pre>Model value: {{time}}</pre>
+  </div>
+  <div class="col-md-8 mb-2">
+    <markdown ngPreserveWhitespaces>
+    ```typescript
+    export class TimeInputTemplateDemoComponent {{ '{' }}
+      formId = 'app-time-input-template-demo-';
+      time = '13:30';
+    }
+    ```
+    </markdown>
+
+    <markdown ngPreserveWhitespaces>
+    ```html
+    &lt;div class="form-group">
+      &lt;label [attr.for]="formId + 'time'">Enter a time&lt;/label>
+      &lt;ngx-time-input
+        [inputId]="formId + 'time'"
+        inputClass="form-control"
+        [(ngModel)]="time">&lt;/ngx-time-input>
+    &lt;/div>
+    &lt;pre>Model value: {{ '{{' }}time}}&lt;/pre>
+    ```
+    </markdown>
+  </div>
+
+</div>

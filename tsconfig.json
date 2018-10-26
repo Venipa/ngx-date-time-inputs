@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@nowzoo/ngx-date-time-inputs": [
+        "dist/ngx-date-time-inputs"
+      ],
+      "@nowzoo/ngx-date-time-inputs/*": [
+        "dist/ngx-date-time-inputs/*"
+      ]
+    }
   }
 }

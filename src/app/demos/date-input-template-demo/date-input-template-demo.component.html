@@ -1,0 +1,36 @@
+<div class="row mb-4">
+  <div class="col-md-4 mb-2">
+    <div class="form-group">
+      <label [attr.for]="formId + 'date'">Enter a date</label>
+      <ngx-date-input
+        [inputId]="formId + 'date'"
+        inputClass="form-control"
+        [(ngModel)]="date"></ngx-date-input>
+    </div>
+    <pre>Model value: {{date}}</pre>
+  </div>
+  <div class="col-md-8 mb-2">
+    <markdown ngPreserveWhitespaces>
+    ```typescript
+    export class DateInputTemplateDemoComponent {{'{'}}
+      formId = 'app-date-input-template-demo-';
+      date = '2018-12-25';
+    }
+    ```
+    </markdown>
+
+    <markdown ngPreserveWhitespaces>
+    ```html
+    &lt;div class="form-group">
+      &lt;label [attr.for]="formId + 'date'">Enter a date&lt;/label>
+      &lt;ngx-date-input
+        [inputId]="formId + 'date'"
+        inputClass="form-control"
+        [(ngModel)]="date">&lt;/ngx-date-input>
+    &lt;/div>
+    &lt;pre>Model value: {{'{{'}}date}}&lt;/pre>
+    ```
+    </markdown>
+  </div>
+
+</div>

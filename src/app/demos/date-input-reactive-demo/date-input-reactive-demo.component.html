@@ -1,0 +1,57 @@
+<div class="row mb-4">
+  <div class="col-md-4 mb-2">
+    <div class="form-group">
+      <label [attr.for]="formId + 'date'">Enter a date (today or after)</label>
+      <ngx-date-input
+        [inputId]="formId + 'date'"
+        [inputClass]="'form-control' + (dateControl.invalid ? ' is-invalid' : '')"
+        inputPlaceholder="Enter a date (today or after)"
+        [formControl]="dateControl"></ngx-date-input>
+      <div class="invalid-feedback d-block" *ngIf="dateControl.hasError('minDate')">
+        That date is before today.
+      </div>
+    </div>
+    <pre>Model value: {{dateControl.value}}</pre>
+  </div>
+  <div class="col-md-8 mb-2">
+    <markdown ngPreserveWhitespaces>
+    ```typescript
+    export class DateInputReactiveDemoComponent implements OnInit {{ '{' }}
+      dateControl: FormControl;
+      formId = 'app-date-input-reactive-demo-';
+      ngOnInit() {{ '{' }}
+        const today = moment().format('YYYY-MM-DD');
+        this.dateControl = new FormControl(today, {{ '{' }}validators: [
+          (fc: FormControl) => {{ '{' }}
+            const m = moment(fc.value, 'YYYY-MM-DD');
+            // today...
+            const min = moment();
+            if (min.isAfter(m, 'date')) {{ '{' }}
+              return {{ '{' }}minDate: true};
+            }
+            return null;
+          }
+        ]});
+      }
+    }
+    ```
+    </markdown>
+
+    <markdown ngPreserveWhitespaces>
+    ```html
+    &lt;div class="form-group">
+      &lt;label [attr.for]="formId + 'date'">Enter a date (today or after)&lt;/label>
+      &lt;ngx-date-input
+        [inputId]="formId + 'date'"
+        [inputClass]="'form-control' + (dateControl.invalid ? ' is-invalid' : '')"
+        inputPlaceholder="Enter a date (today or after)"
+        [formControl]="dateControl">&lt;/ngx-date-input>
+      &lt;div class="invalid-feedback d-block" *ngIf="dateControl.hasError('minDate')">
+        That date is before today.
+      &lt;/div>
+    &lt;/div>
+    ```
+    </markdown>
+  </div>
+
+</div>

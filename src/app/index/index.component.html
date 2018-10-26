@@ -1,0 +1,118 @@
+<header class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">ngx-date-time-inputs</h1>
+    <p class="lead">
+      Simple date and time inputs. No calendars or fancy controls or polyfills. They just guess the
+      date or time the user means. Forgiving and (more or less) locale-aware.
+    </p>
+  </div>
+</header>
+
+<div class="container">
+  <section class="mb-4">
+    <h2>Try ’Em Out</h2>
+
+    <div class="row">
+
+      <div class="col-md mb-2 mb-md-0">
+        <div class="form-group">
+          <label [attr.for]="formId + 'date'">Enter a date</label>
+          <ngx-date-input
+            [inputId]="formId + 'date'"
+            inputClass="form-control form-control-lg"
+            [(ngModel)]="date"></ngx-date-input>
+        </div>
+        <pre>Model value: {{date}}</pre>
+        <p>
+          Some inputs to try:
+        </p>
+        <ul>
+          <li>jan 22</li>
+          <li>March 15 2019</li>
+          <li>15 may 1978</li>
+          <li>12/25/2020</li>
+          <li>25/12/2020</li>
+          <li>15</li>
+          <li>foo bar</li>
+        </ul>
+        <p>
+          <a routerLink="/date-input" class="btn btn-primary">Date Input API and Demos</a>
+        </p>
+
+      </div>
+      <div class="col-md">
+        <div class="form-group">
+          <label [attr.for]="formId + 'time'">Enter a time</label>
+          <ngx-time-input
+            [inputId]="formId + 'time'"
+            inputClass="form-control form-control-lg"
+            [(ngModel)]="time"></ngx-time-input>
+        </div>
+        <pre>Model value: {{time}}</pre>
+        <p>
+          Some inputs to try:
+        </p>
+        <ul>
+          <li>6 am</li>
+          <li>7:30 PM</li>
+          <li>0400</li>
+          <li>9</li>
+          <li>16:32</li>
+          <li>4:30 pm</li>
+          <li>foo bar</li>
+
+        </ul>
+        <p>
+          <a routerLink="/time-input" class="btn btn-primary">Time Input API and Demos</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="mb-4">
+    <h2>Installation</h2>
+
+    Install the library and its dependancies (moment and lodash-es).
+
+    <markdown ngPreserveWhitespaces>
+      ```bash
+      npm i --save @nowzoo/ngx-date-time-inputs moment lodash-es
+      ```
+    </markdown>
+  </section>
+
+  <section class="mb-4">
+    <h2>Usage</h2>
+
+    Import the library module...
+
+    <markdown ngPreserveWhitespaces>
+      ```typescript
+      import {{ '{' }} NgxDateTimeInputsModule } from '@nowzoo/ngx-date-time-inputs';
+      @NgModule({{ '{' }}
+        imports: [
+          NgxDateTimeInputsModule
+        ]
+      })
+      export class MyModule {{ '{' }} }
+      ```
+    </markdown>
+
+    The <code>ngx-date-input</code> and <code>ngx-time-input</code> components are
+    now available for you to use:
+    <markdown ngPreserveWhitespaces>
+      ```html
+      &lt;ngx-date-input
+        [inputId]="formId + 'date'"
+        inputClass="form-control"
+        [(ngModel)]="date">&lt;/ngx-date-input>
+      &lt;ngx-time-input
+        [inputId]="formId + 'time'"
+        inputClass="form-control"
+        [(ngModel)]="time">&lt;/ngx-time-input>
+      ```
+    </markdown>
+
+  </section>
+
+
+</div>

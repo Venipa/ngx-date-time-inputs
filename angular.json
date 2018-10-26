@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-date-time-inputs": {
+    "ngx-date-time-inputs-demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-date-time-inputs",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +27,20 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js",
+              "node_modules/prismjs/components/prism-bash.js",
+              "node_modules/prismjs/components/prism-json.js",
+              "node_modules/jquery/dist/jquery.slim.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -61,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-date-time-inputs:build"
+            "browserTarget": "ngx-date-time-inputs-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-date-time-inputs:build:production"
+              "browserTarget": "ngx-date-time-inputs-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-date-time-inputs:build"
+            "browserTarget": "ngx-date-time-inputs-demo:build"
           }
         },
         "test": {
@@ -106,7 +117,7 @@
         }
       }
     },
-    "ngx-date-time-inputs-e2e": {
+    "ngx-date-time-inputs-demo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +126,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-date-time-inputs:serve"
+            "devServerTarget": "ngx-date-time-inputs-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-date-time-inputs:serve:production"
+              "devServerTarget": "ngx-date-time-inputs-demo:serve:production"
             }
           }
         },
@@ -133,7 +144,42 @@
           }
         }
       }
+    },
+    "ngx-date-time-inputs": {
+      "root": "projects/ngx-date-time-inputs",
+      "sourceRoot": "projects/ngx-date-time-inputs/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-date-time-inputs/tsconfig.lib.json",
+            "project": "projects/ngx-date-time-inputs/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-date-time-inputs/src/test.ts",
+            "tsConfig": "projects/ngx-date-time-inputs/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-date-time-inputs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-date-time-inputs/tsconfig.lib.json",
+              "projects/ngx-date-time-inputs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ngx-date-time-inputs"
+  "defaultProject": "ngx-date-time-inputs-demo"
 }

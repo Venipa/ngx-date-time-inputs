@@ -1,0 +1,37 @@
+<header class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">ngx-time-input</h1>
+    <p class="lead">
+      A custom control that guesses a time from user input and
+      normalizes it to 24-hour <code>HH:mm</code> format. It strives to be
+      forgiving about the input format and locale-aware.
+    </p>
+  </div>
+</header>
+
+<div class="container">
+  <section class="mb-4">
+    <h2>API</h2>
+    <markdown ngPreserveWhitespaces>
+      The component implements `ControlValueAccessor`. The model is a string in the format `HH:mm` (24-hour time).
+
+      - `selector: 'ngx-time-input'`
+
+      ##### Inputs
+
+      - `displayFormat: string` The format for displaying the date in the input. See Moment's [formatting docs](https://momentjs.com/docs/#/displaying/format/). Default: `'LT'` (time in the locale).
+      - `inputPlaceholder: string` A string to be used as the input's placeholder attribute. Default: `'Enter a time'`
+      - `inputId: string` A string to be used as the input's id.
+      - `inputClass: string` A string to be used as the input's class. Pass any error classes here.
+    </markdown>
+  </section>
+  <section class="mb-4">
+    <h2>Demos</h2>
+
+    <h5>Template Driven Form</h5>
+    <app-time-input-template-demo></app-time-input-template-demo>
+    <h5>Reactive Form</h5>
+    <app-time-input-reactive-demo></app-time-input-reactive-demo>
+  </section>
+
+</div>

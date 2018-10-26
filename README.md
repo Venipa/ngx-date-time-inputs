@@ -51,7 +51,8 @@ Inputs
 - `inputId: string` A string to be used as the input's id.
 - `inputClass: string` A string to be used as the input's class. Pass any error classes here.
 
-### Time Input API
+## Time Input API
+The component implements `ControlValueAccessor`. The model is a string in the format `HH:mm` (24-hour time).
 
 Selector: `ngx-time-input`
 

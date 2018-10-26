@@ -440,6 +440,7 @@ terms above.
 MIT
 
 @nowzoo/ngx-date-time-inputs
+MIT
 MIT License
 
 Copyright (c) 2018 NowZoo

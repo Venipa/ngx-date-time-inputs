@@ -65,8 +65,6 @@ Inputs
 
 
 
-
-
 ## Development
 
 Contributions are welcome.
@@ -93,3 +91,7 @@ Run `ng build ngx-date-time-inputs` to build the library after you change it. Th
 Run `ng test ngx-date-time-inputs` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 The library is also set up to run tests using Wallaby using the config at `projects/ngx-date-time-inputs/wallaby.js`
+
+## License
+
+[MIT](https://github.com/nowzoo/ngx-date-time-inputs/blob/master/LICENSE)

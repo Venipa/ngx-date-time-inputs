@@ -65,28 +65,31 @@ Inputs
 
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development
 
-## Code scaffolding
+Contributions are welcome.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+git clone git@github.com:nowzoo/ngx-date-time-inputs.git
+cd ngx-date-time-inputs
+npm i
+```
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
-## Build
+The library files are located in `projects/ngx-date-time-inputs`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Run `ng serve` for a dev server with a demo app. Navigate to `http://localhost:4200/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Building the library
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng build ngx-date-time-inputs` to build the library after you change it. The dev server does not rebuild the library automatically.
 
-## Further help
+### Running unit tests
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng test ngx-date-time-inputs` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+The library is also set up to run tests using Wallaby using the config at `projects/ngx-date-time-inputs/wallaby.js`

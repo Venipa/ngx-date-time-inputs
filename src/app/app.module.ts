@@ -5,8 +5,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 
-import { NgxDateTimeInputsModule } from '@nowzoo/ngx-date-time-inputs';
-
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { TimeInputComponent } from './time-input/time-input.component';
@@ -15,6 +13,7 @@ import { DateInputTemplateDemoComponent } from './demos/date-input-template-demo
 import { DateInputReactiveDemoComponent } from './demos/date-input-reactive-demo/date-input-reactive-demo.component';
 import { TimeInputReactiveDemoComponent } from './demos/time-input-reactive-demo/time-input-reactive-demo.component';
 import { TimeInputTemplateDemoComponent } from './demos/time-input-template-demo/time-input-template-demo.component';
+import { NgxDateTimeInputsModule } from 'projects/ngx-date-time-inputs/src/public_api';
 
 const routes: Routes = [
   {path: 'date-input', component: DateInputComponent},

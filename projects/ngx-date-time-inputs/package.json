@@ -1,5 +1,5 @@
 {
-  "name": "@nowzoo/ngx-date-time-inputs",
+  "name": "@venipa/ngx-date-time-inputs",
   "version": "0.0.6",
   "description": "Simple date and time inputs for Angular. No calendars or fancy controls or polyfills. They just guess the date or time the user means. Forgiving and (more or less) locale-aware.",
   "keywords": [
@@ -8,17 +8,28 @@
     "time",
     "inputs"
   ],
-  "homepage": "https://github.com/nowzoo/ngx-date-time-inputs",
-  "bugs": "https://github.com/nowzoo/ngx-date-time-inputs/issues",
+  "author": {
+    "name": "nowzoo",
+    "url": "https://github.com/nowzoo"
+  },
+  "contributors": [
+    {
+      "email": "admin@venipa.net",
+      "name": "Venipa",
+      "url": "https://github.com/Venipa"
+    }
+  ],
+  "homepage": "https://github.com/Venipa/ngx-date-time-inputs",
+  "bugs": "https://github.com/Venipa/ngx-date-time-inputs/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nowzoo/ngx-date-time-inputs.git"
+    "url": "https://github.com/Venipa/ngx-date-time-inputs.git"
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0",
-    "@angular/forms": "^7.0.0",
+    "@angular/common": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "@angular/forms": "^9.1.0",
     "lodash-es": "^4.17.11",
     "moment": "^2.22.2"
   }

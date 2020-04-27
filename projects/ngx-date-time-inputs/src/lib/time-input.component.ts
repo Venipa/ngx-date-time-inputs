@@ -1,10 +1,12 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, OnDestroy } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 import { DateService } from './date.service';
 import { MODEL_TIME_FORMAT } from './shared';
 import { AbstractInputComponent } from './abstract-input.component';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 
 @Component({
@@ -18,8 +20,10 @@ import { AbstractInputComponent } from './abstract-input.component';
     }
   ]
 })
-export class TimeInputComponent extends AbstractInputComponent {
-  @Input() displayFormat = 'LT';
+export class TimeInputComponent extends AbstractInputComponent implements OnDestroy {
+  destroy$ = new Subject<void>();
+
+  @Input() displayFormat: any = 'LT';
   @Input() inputPlaceholder = 'Enter a time';
   @Input() inputId: string;
   @Input() inputClass: string;
@@ -28,6 +32,17 @@ export class TimeInputComponent extends AbstractInputComponent {
     ds: DateService,
   ) {
     super(ds);
+    if (this.displayFormat === false) {
+      this.displayFormat = ds.defaultDateFormat;
+      ds.defaultDateFormat$.pipe(takeUntil(this.destroy$)).subscribe(x => {
+        this.handleInputChange();
+      });
+    }
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(),
+    this.destroy$.complete();
   }
 
   writeValue(timeString: string) {

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { words } from 'lodash-es';
 import * as momentNs from 'moment';
+import { BehaviorSubject } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 const moment = momentNs;
 
@@ -16,7 +18,17 @@ export class TimeParseResult {
 }
 @Injectable()
 export class DateService {
-
+  private _defaultDateFormat = new BehaviorSubject<string>('LT');
+  readonly defaultDateFormat$ = this._defaultDateFormat.asObservable()
+    .pipe(
+      distinctUntilChanged()
+    );
+  get defaultDateFormat() {
+    return this._defaultDateFormat.getValue();
+  }
+  set defaultDateFormat(val: string) {
+    this._defaultDateFormat.next(val);
+  }
   monthNamesRx: RegExp;
   monthAbbrsRx: RegExp;
 

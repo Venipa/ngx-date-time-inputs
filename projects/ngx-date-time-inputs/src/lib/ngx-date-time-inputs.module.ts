@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DateInputComponent } from './date-input.component';
 import { TimeInputComponent } from './time-input.component';
@@ -10,6 +10,15 @@ import { DateService } from './date.service';
   ],
   declarations: [DateInputComponent, TimeInputComponent],
   exports: [DateInputComponent, TimeInputComponent],
-  providers: [DateService]
+  providers: []
 })
-export class NgxDateTimeInputsModule { }
+export class NgxDateTimeInputsModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: NgxDateTimeInputsModule,
+      providers: [
+        DateService
+      ]
+    };
+  }
+}
